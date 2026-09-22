@@ -3,164 +3,184 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cognitive Futures Lab investigates how people sense, interpret, and interact with cognitive data.">
-  <meta name="theme-color" content="#ffffff">
-  <title>Cognitive Futures Lab</title>
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="The Cognitive Futures Lab website is under construction.">
+  <title>Cognitive Futures Lab — Under construction</title>
+  <style>
+    :root {
+      --ink: #101820;
+      --signal: #16b8d4;
+      --line: #dce5e9;
+      --muted: #617078;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: clamp(24px, 4vw, 56px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      background: var(--line);
+    }
+
+    .page::before {
+      top: 0;
+      bottom: 0;
+      left: clamp(24px, 4vw, 56px);
+      width: 1px;
+    }
+
+    .page::after {
+      left: 0;
+      right: 0;
+      bottom: clamp(76px, 9vw, 116px);
+      height: 1px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: stretch;
+      gap: 16px;
+      margin-left: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-mark {
+      width: 4px;
+      border-radius: 999px;
+      background: var(--signal);
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    main {
+      align-self: center;
+      width: min(1050px, 100%);
+      padding: clamp(72px, 10vw, 150px) 0 clamp(80px, 11vw, 160px) 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 0 rgba(22, 184, 212, .32);
+      animation: pulse 2.4s ease-out infinite;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(52px, 9.2vw, 132px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: .92;
+    }
+
+    .intro {
+      max-width: 640px;
+      margin: clamp(28px, 4vw, 46px) 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 1.7vw, 22px);
+      line-height: 1.48;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 28px 0 0 18px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: .04em;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p { margin: 0; }
+
+    footer a {
+      color: inherit;
+      text-underline-offset: 3px;
+    }
+
+    @keyframes pulse {
+      70%, 100% { box-shadow: 0 0 0 12px rgba(22, 184, 212, 0); }
+    }
+
+    @media (max-width: 680px) {
+      .page::after { bottom: 154px; }
+      main { padding-top: 82px; padding-bottom: 100px; }
+      footer { flex-direction: column; gap: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .status-dot { animation: none; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Cognitive Futures Lab home">
-      <span class="wordmark-anchor" aria-hidden="true"></span>
-      <span class="wordmark-full">Cognitive Futures Lab</span>
-      <span class="wordmark-compact" aria-hidden="true">CFL</span>
-    </a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span class="menu-label">Menu</span>
-      <span class="menu-lines" aria-hidden="true"></span>
-    </button>
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="research.html">Research</a>
-      <a href="people.html">People</a>
-      <a href="partners.html">Partners</a>
-      <a href="symposium.html">Symposium</a>
-      <a href="notes.html">Notes</a>
-      <a href="about.html">About</a>
-      <a class="nav-accent" href="connect.html">Connect</a>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow">An interdisciplinary research lab in the Netherlands</p>
-        <h1>How will we understand ourselves when cognition becomes measurable?</h1>
-        <p class="hero-intro">We investigate how people sense, interpret, and interact with cognitive data—and what responsible futures those technologies might enable.</p>
-        <a class="text-link" href="#research">Explore our research <span aria-hidden="true">↘</span></a>
+  <div class="page">
+    <header>
+      <div class="brand" aria-label="Cognitive Futures Lab">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Cognitive<br>Futures<br>Lab</span>
       </div>
+    </header>
 
-      <aside class="interpretive-field" aria-label="Measurement, inference, and experience are not the same thing">
-        <img src="assets/visuals/inquiry-field.svg" alt="Three offset frames labelled measure, interpret, and experience, with an open space between them.">
-        <div class="field-caption">
-          <p class="field-question">What can a measure mean?</p>
-          <p class="field-statement">Not the same thing.</p>
-          <p class="field-note">Our work begins in the gaps between measurement, interpretation, and experience.</p>
-        </div>
-      </aside>
+    <main>
+      <p class="status"><span class="status-dot" aria-hidden="true"></span>Website under construction</p>
+      <h1>Thinking about<br>cognitive futures.</h1>
+      <p class="intro">We are building a new home for our work on cognition, data and interactive technologies. Please check back soon.</p>
+    </main>
 
-      <div class="partner-line" aria-label="Institutional partners">
-        <a class="institution-logo" href="https://www.tudelft.nl/" aria-label="TU Delft"><img src="assets/TUDelft_logo_cmyk.svg" alt="TU Delft"></a>
-        <a class="institution-logo" href="https://www.tue.nl/en/" aria-label="Eindhoven University of Technology"><img src="assets/Eindhoven_University_of_Technology_logo_new.svg.webp" alt="Eindhoven University of Technology"></a>
-        <div class="institution-logo institution-logo-pdf" aria-label="University of Twente"><object data="assets/UT_Logo_Sta_Black_RGB_EN.pdf" type="application/pdf" aria-label="University of Twente logo"><span>University of Twente</span></object></div>
-      </div>
-      <div class="funding-line">
-        <span>Supported by</span>
-        <a class="funding-logo" href="https://www.4tu.nl/nirict/"><img src="assets/4TUNIRICT.png" alt="4TU.NIRICT"><span class="visually-hidden">Visit 4TU.NIRICT</span></a>
-      </div>
-    </section>
-
-    <section class="feature-links" aria-label="Current opportunities">
-      <a class="feature-card feature-card-event" href="symposium.html">
-        <img src="assets/visuals/symposium-poster.svg" alt="Save the date: Cognitive Futures Symposium, 7 December 2026, Aula TU Delft.">
-        <div><span class="feature-kicker">Upcoming · 7 December 2026</span><h2>Cognitive Futures Symposium</h2><p>Keynote, panel, posters, and workshops at TU Delft.</p><span class="feature-action">View symposium <span aria-hidden="true">↗</span></span></div>
-      </a>
-      <a class="feature-card" href="partners.html">
-        <img src="assets/visuals/partners-field.svg" alt="Independent fields surrounding a shared space labelled shared inquiry.">
-        <div><span class="feature-kicker">Open invitation</span><h2>Partner with the lab</h2><p>For researchers, companies, and organisations with a question worth exploring together.</p><span class="feature-action">Explore collaboration <span aria-hidden="true">↗</span></span></div>
-      </a>
-    </section>
-
-    <section class="statement section-pad" id="about">
-      <p class="section-index">01 / Premise</p>
-      <div class="statement-copy">
-        <h2>Cognition is becoming something people can measure, see, and act on.</h2>
-        <p>Consumer neurotechnology and physiological sensing are moving cognitive data beyond specialist laboratories. Our work asks what these measurements mean to people, how interfaces shape their interpretation, and how we can design technologies that support agency rather than obscure it.</p>
-      </div>
-    </section>
-
-    <section class="research section-pad" id="research">
-      <div class="section-heading">
-        <p class="section-index">02 / Research directions</p>
-        <h2>Between measure and meaning</h2>
-      </div>
-
-      <div class="research-list">
-        <article class="research-item">
-          <span class="item-number">01</span>
-          <div>
-            <h3>Sensing the mind</h3>
-            <p>Exploring consumer neurotechnology, physiological sensing, and the limits of what everyday devices can claim to know.</p>
-          </div>
-          <span class="item-mark" aria-hidden="true"></span>
-        </article>
-        <article class="research-item">
-          <span class="item-number">02</span>
-          <div>
-            <h3>Making sense of cognition</h3>
-            <p>Studying interpretation, uncertainty, reflection, and the stories people build around cognitive measurements.</p>
-          </div>
-          <span class="item-mark" aria-hidden="true"></span>
-        </article>
-        <article class="research-item">
-          <span class="item-number">03</span>
-          <div>
-            <h3>Designing future interfaces</h3>
-            <p>Creating embodied, interactive, and responsible systems that make complex cognitive data understandable and useful.</p>
-          </div>
-          <span class="item-mark" aria-hidden="true"></span>
-        </article>
-      </div>
-    </section>
-
-    <section class="collaboration section-pad" id="collaboration">
-      <p class="section-index">03 / Collaboration</p>
-      <div class="collaboration-grid">
-        <div>
-          <h2>Built across disciplines and institutions.</h2>
-        </div>
-        <div class="collaboration-copy">
-          <p>Cognitive Futures Lab brings together perspectives from human-computer interaction, cognitive psychology, consumer neurotechnology, data sensemaking, and mechanical engineering.</p>
-          <p>We are developing this work with collaborators at TU Delft, Eindhoven University of Technology, and the University of Twente.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="connect section-pad" id="connect">
-      <p class="section-index">04 / Connect</p>
-      <div class="connect-grid">
-        <div>
-          <h2>Interested in thinking with us?</h2>
-          <p>We welcome conversations with researchers, students, industry and public partners, media, and people interested in participating in future studies.</p>
-        </div>
-        <div class="connect-actions">
-          <!-- Replace the email address below before publishing. -->
-          <a class="primary-link" href="mailto:YOUR.EMAIL@tudelft.nl">Start a conversation <span aria-hidden="true">↗</span></a>
-          <div class="dispatch-note">
-            <span class="pulse-dot" aria-hidden="true"></span>
-            <p><strong>Cognitive Futures Dispatch</strong><br>Occasional notes on experiments, publications, events, and opportunities. Newsletter signup coming soon.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <a class="wordmark wordmark-footer" href="#top" aria-label="Cognitive Futures Lab home">
-      <span class="wordmark-anchor" aria-hidden="true"></span>
-      <span class="wordmark-full">Cognitive Futures Lab</span>
-      <span class="wordmark-compact" aria-hidden="true">CFL</span>
-    </a>
-    <nav class="footer-nav" aria-label="Footer navigation"><a href="research.html">Research</a><a href="people.html">People</a><a href="partners.html">Partners</a><a href="symposium.html">Symposium</a><a href="about.html">About</a><a href="connect.html">Connect</a></nav>
-    <p class="footer-support"><a class="funder-lockup" href="https://www.4tu.nl/nirict/"><span>Supported by</span><img src="assets/4TUNIRICT.png" alt="4TU.NIRICT"></a></p>
-    <p class="footer-meta">© <span id="year">2026</span> Cognitive Futures Lab · <a href="privacy.html">Privacy</a></p>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+    <footer>
+      <p>TU Delft · Eindhoven University of Technology · University of Twente</p>
+      <p>Supported by <a href="https://www.4tu.nl/nirict/">4TU.NIRICT</a></p>
+    </footer>
+  </div>
 </body>
 </html>
